@@ -1,0 +1,83 @@
+Que 1
+Removing Duplicates from a given sentence
+
+#include <iostream.h> 
+using namespace std; 
+  
+char *removeDuplicate(char str[], int n) 
+{ 
+   int index = 0;    
+     
+   for (int i=0; i<n; i++) { 
+          
+     int j;   
+     for (j=0; j<i; j++)  
+        if (str[i] == str[j]) 
+           break; 
+       
+     if (j == i) 
+        str[index++] = str[i]; 
+   } 
+     
+   return str; 
+} 
+  
+int main() 
+{ 
+   char str[]= "silence is a source of
+great strength"; 
+   int n = sizeof(str) / sizeof(str[0]); 
+   cout << removeDuplicate(str, n); 
+   return 0; 
+}
+
+Que 2
+program to validate Email and URL
+
+#include<iostream>
+#include<regex>
+#include<stdio.h>
+using namespace std;
+bool Email_check(string email)
+{
+     const regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+    return regex_match(email,pattern);
+}
+int main()
+{
+    string str;
+    cout<<"Enter your Email-Id:"<<endl;
+    cin>>str;
+    if(Email_check(str))
+        cout<<"Your Email-Id is valid"<<endl;
+    else
+        cout<<"Your Email-Id is invalid"<<endl;
+    return 0;
+}
+
+
+Que 3.
+ Program to find all the missing elements in the given range is discussed here. In this
+program, we have two inputs:
+
+#include <iostream.h>
+using namespace std;
+ 
+int getMissingNo(int a[], int n)
+{
+ 
+    int total = (n + 1) * (n + 2) / 2;
+    for (int i = 0; i < n; i++)
+        total -= a[i];
+    return total;
+}
+ 
+int main()
+{
+    int arr[] = { 1, 2, 4, 5, 6 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int miss = getMissingNo(arr, n);
+    cout << miss;
+}
+
+ 
